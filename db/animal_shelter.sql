@@ -10,8 +10,7 @@ CREATE TABLE owners (
     last_name VARCHAR(255)
 );
 
-CREATE TABLE animals
-(
+CREATE TABLE animals (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     species VARCHAR(255),
@@ -25,13 +24,13 @@ CREATE TABLE trainers (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    fav_species VARCHAR(255),
+    fav_species VARCHAR(255)
 );
 
 CREATE TABLE adoptions (
     id SERIAL PRIMARY KEY,
     animal_id INT REFERENCES animals(id) ON DELETE CASCADE,
-    owner_id  INT REFERENCES owners(id) ON DELETE CASCADE,
+    owner_id INT REFERENCES owners(id) ON DELETE CASCADE,
     date VARCHAR(255)
 );
 

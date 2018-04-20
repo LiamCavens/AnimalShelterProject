@@ -30,9 +30,27 @@ class Animal
       $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @species, @breed, @age, @adoptable]
+    values = [@name, @species, @breed, @age, @adoptable, @admission_date]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+    end
+
+    def update()
+        sql = "UPDATE animals
+        SET
+        (
+            name,
+            species,
+            breed,
+            age,
+            adoptable,
+            admission_date
+        ) = (
+                $1, $2, $3, $4, $5, $6
+        ) 
+        WHERE id = $7;"
+        values = [@name, @species, @breed, @age, @adoptable, @admission_date, @id]
+        SqlRunner.run(sql, values)
     end
 
     def self.all()
