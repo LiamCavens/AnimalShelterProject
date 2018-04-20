@@ -23,7 +23,8 @@ CREATE TABLE animals (
     species VARCHAR(255),
     breed VARCHAR(255),
     age INT,
-    adoptable BOOLEAN
+    adoptable BOOLEAN,
+    admission_date VARCHAR(255)
 );
 
 CREATE TABLE adoptions (
