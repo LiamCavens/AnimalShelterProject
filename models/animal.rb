@@ -6,7 +6,7 @@ class Animal
     attr_accessor :name, :species, :breed, :age, :adoptable, :picture
 
     def initialize(options)
-        @id= options["id"].to_i
+        @id= options["id"].to_i if options["id"]
         @name = options["name"]
         @species = options["species"]
         @breed = options["breed"]
@@ -34,4 +34,23 @@ class Animal
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     end
+
+    def self.all()
+    sql = "SELECT * FROM animals"
+    results = SqlRunner.run(sql)
+    return results.map { |animal| Animal.new(animal) }
+    end
+
+    def self.find()
+        sql = "SELECT * FROM animals
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Animal.new(results.first)
+    end
+
+    def self.delete_all
+    sql = "DELETE FROM animals"
+    SqlRunner.run(sql)
+  end
 end

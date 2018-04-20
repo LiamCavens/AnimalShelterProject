@@ -7,5 +7,6 @@ class Trainer
         @first_name = options["first_name"]
         @last_name = options["last_name"]
         @fav_species = options["fav_species"]
+        @animal_id = options["animal_id"].to_i
     end
 end
