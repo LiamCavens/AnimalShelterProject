@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Animal
 
     attr_reader :id
@@ -10,6 +12,5 @@ class Animal
         @breed = options["breed"]
         @age = options["age"].to_i
         @adoptable = options["adoptable"]
-        @picture = options["picture"]  
     end
 end

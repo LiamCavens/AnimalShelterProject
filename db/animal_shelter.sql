@@ -14,7 +14,7 @@ CREATE TABLE trainers (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    fav_species VARCHAT(255)
+    fav_species VARCHAR(255)
 );
 
 CREATE TABLE animals (
@@ -23,8 +23,7 @@ CREATE TABLE animals (
     species VARCHAR(255),
     breed VARCHAR(255),
     age INT,
-    adoptable BOOLEAN,
-    picture VARCHAR(255)
+    adoptable BOOLEAN
 );
 
 CREATE TABLE adoptions (
