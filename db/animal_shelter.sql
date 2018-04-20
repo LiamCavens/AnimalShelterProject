@@ -26,7 +26,6 @@ CREATE TABLE trainers (
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     fav_species VARCHAR(255),
-    animal_id INT REFERENCES animals(id) ON DELETE CASCADE
 );
 
 CREATE TABLE adoptions (
