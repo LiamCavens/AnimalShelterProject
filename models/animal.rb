@@ -3,10 +3,10 @@ require_relative('../db/sql_runner.rb')
 class Animal
 
     attr_reader :id
-    attr_accessor :name, :species, :breed, :age, :adoptable, :picture
+    attr_accessor :name, :species, :breed, :age, :adoptable, :admission_date
 
     def initialize(options)
-        @id= options["id"].to_i if options["id"]
+        @id = options["id"].to_i if options["id"]
         @name = options["name"]
         @species = options["species"]
         @breed = options["breed"]
@@ -66,7 +66,7 @@ class Animal
     return results.map { |animal| Animal.new(animal) }
     end
 
-    def self.find()
+    def self.find( id )
         sql = "SELECT * FROM animals
     WHERE id = $1"
     values = [id]

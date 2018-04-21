@@ -1,0 +1,24 @@
+<h1> Animals </h1>
+<p class="create-btn">
+    <a class="btn" href="/animals/new">Add Animal</a>
+</p>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Breed</th>
+    <th>Age</th>
+    <th>Adoptable</th>
+    <th>Admission Date</th>
+</tr>
+<% for animal in @animals %>
+<tr>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+    <td><%= animal.species %></td>
+    <td><%= animal.breed %></td>
+    <td><%= animal.age %></td>
+    <td><%= animal.adoptable %></td>
+    <td><%= animal.admission_date %></td>  
+</tr>
+<% end %>
+ </table>
