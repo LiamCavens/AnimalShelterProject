@@ -16,5 +16,7 @@ get '/adoptions/new' do
 end
 
 post '/adoptions' do
+    adoption = Adoption.new(params)
+    adoption.save()
     redirect to('/adoptions')
 end
