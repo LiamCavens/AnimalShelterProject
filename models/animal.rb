@@ -66,7 +66,7 @@ class Animal
     return results.map { |animal| Animal.new(animal) }
     end
 
-    def self.find( id )
+    def self.find(id)
         sql = "SELECT * FROM animals
     WHERE id = $1"
     values = [id]

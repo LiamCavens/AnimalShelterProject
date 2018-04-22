@@ -12,7 +12,8 @@ get '/animals/:id' do
     erb(:"animals/show")
 end
 
-get '/animals' do 
+get '/animals/new' do 
+    @animals = Animal.all
     erb(:"animals/new")
 end
 
