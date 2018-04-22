@@ -34,7 +34,7 @@ class Adoption
     return results.map { |adoption| Adoption.new(adoption) }
     end
 
-    def self.find()
+    def self.find(id)
         sql = "SELECT * FROM adoptions
     WHERE id = $1"
     values = [id]
@@ -49,7 +49,7 @@ class Adoption
         return Owner.new(results.first)
     end
 
-    def owner()
+    def animal()
         sql = "SELECT * FROM animals WHERE id = $1;"
         values = [@animal_id]
         results = SqlRunner.run(sql, values)

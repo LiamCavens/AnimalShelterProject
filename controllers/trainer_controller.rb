@@ -1,24 +1,24 @@
 require( 'sinatra' )
 require('sinatra/contrib/all')
-require_relative('../models/owner.rb')
+require_relative('../models/trainer.rb')
 
-get '/owners' do
-    @owners = Owner.all()
-    erb (:"owners/index")
+get '/trainers' do
+    @trainers = Trainer.all()
+    erb (:"trainers/index")
 end
 
-get '/owners/new' do 
-    @owners = Owner.all
-    erb(:"owners/new")
+get '/trainers/new' do 
+    @trainers = Trainer.all()
+    erb(:"trainers/new")
 end
 
-get '/owners/:id' do
-    @animal = Owner.find(params['id'].to_i)
-    erb(:"owners/show")
+get '/trainers/:id' do
+    @trainer = Trainer.find(params['id'].to_i)
+    erb(:"trainers/show")
 end
 
-post '/owners' do
-    animal = Owner.new(params)
-    animal.save()
-    redirect to "/owners"
+post '/trainers' do
+    trainer = Trainer.new(params)
+    trainer.save()
+    redirect to "/trainers"
 end

@@ -35,7 +35,7 @@ class Trainer
     return results.map { |trainer| Trainer.new(trainer) }
     end
 
-    def self.find()
+    def self.find(id)
         sql = "SELECT * FROM trainers
     WHERE id = $1"
     values = [id]

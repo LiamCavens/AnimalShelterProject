@@ -6,25 +6,14 @@
      GAINSBORO - #E0E2DB
  -->
 
- <form action="/animals" method="post">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name">
- 
-    <label for="species">Species:</label>
-    <input type="text" name="species" id="species">
- 
-    <label for="breed">Breed:</label>
-    <input type="text" name="breed" id="breed">
- 
-    <label for="age">Age:</label>
-    <input type="number" name="age" value="0" id="age">
- 
-    <label for="adoptable">Adoptable:</label>
-    <input type="checkbox" name="adoptable" id="adoptable">
- 
-    <label for="admission_date">Admission Date:</label>
-    <input type="text" name="admission_date" id="admission_date">
+<p>
+    <a href="/adoptions/new">New Adoption!</a>
+</p>
 
-    <input type="submit" value="Add Animal">
- 
-</form>
+<ul>
+    <% for adoption in @adoptions %>
+    <li>
+    <p><%= adoption.owner.first_name adoption.owner.last_name %> Adopted <%= adoption.animal.name %> into his care!
+    </p>
+    </li>
+</ul>

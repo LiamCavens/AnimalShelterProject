@@ -33,7 +33,7 @@ class Owner
     return results.map { |owner| Owner.new(owner) }
     end
 
-    def self.find()
+    def self.find(id)
         sql = "SELECT * FROM owners
     WHERE id = $1"
     values = [id]

@@ -1,0 +1,16 @@
+<h1> Owners </h1>
+<p class="create-btn">
+    <a class="btn" href="/owners/new">Add Owner</a>
+</p>
+<table>
+<tr>
+    <th>Firts Name</th>
+    <th>Last Name</th>
+</tr>
+<% for owner in @owners %>
+<tr>
+    <td><a href="/owners/<%= owner.id %>"><%= owner.first_name %></a></td>  
+    <td><a href="/owners/<%= owner.id %>"><%= owner.last_name %></a></td>  
+</tr>
+<% end %>
+ </table>
