@@ -31,4 +31,5 @@ footer {
 .show-table {
     display: flex;
     align-content: center;
+    flex-direction: column;
 }
