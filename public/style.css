@@ -1,5 +1,6 @@
 body {
     background-color: #09814A;
+    align-content: center;
 }
 
 h1 {
@@ -9,16 +10,28 @@ h1 {
 
 footer {
     background-color: #A7A2A9;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
 }
 
 .navbar {
     background-color: #121619;
     overflow: hidden;
-    justify-content: center;
     display: flex;
 }
 
+.nav-abb {
+    color: #09814A;
+    font-family: 'Monoton', cursive;
+    display: flex;
+    float: left;
+    text-align: center;
+    padding: 0% 2%;
+}
+
 .navbar a {
+    justify-content: center;
     display: flex;
     color: #f2f2f2;
     text-align: center;
@@ -32,21 +45,26 @@ footer {
     color: #121619;
 }
 
-.navbar #website-abbreviate {
-    align-self: center;
-    justify-content: left;
-    color: #09814A;
-    font-family: 'Monoton', cursive;
-    padding: 0px;
-    margin: 0px;
-}
-
-table {
-    border-style: 10px groove;
+table, tr, td {
+    border: 1px solid black;
+    padding: 5px 15px;
 }
 
 .show-table {
-    display: flex;
-    align-content: center;
-    flex-direction: column;
+    align-self: auto;
+    justify-content: center;
+}
+
+#full-opacity {
+    opacity: 1;
+}
+
+.home-page {
+    height: 100%;
+    width: 100%;
+    background: url('/images/goat-background.jpg') no-repeat fixed;   
+}
+
+button {
+    margin: 1%;
 }

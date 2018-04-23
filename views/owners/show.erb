@@ -1,4 +1,18 @@
 <div class="show-table">
     <h2> <%= @owner.first_name %> <%= @owner.last_name %> </h2>
-    <%# <p> <%= @owner.animals() <p> %>
+    <p> Adopted Pets : <% @owner.animals().each do |animal| %></p>
+    <p> <%= animal.name %> The <%= animal.species %> </p>
+    <% end %>
 </div>
+
+<p>
+<form action="/owners/<%= @owner.id %>/edit" method="get">
+<input type="submit" value="Edit Owner">
+</form>
+</p>
+
+<p>
+<form action="/owners/<%= @owner.id %>/delete" method="post">
+<input type="submit" value="Delete">
+</form>
+</p>

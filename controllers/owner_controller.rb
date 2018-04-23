@@ -22,3 +22,20 @@ post '/owners' do
     animal.save()
     redirect to "/owners"
 end
+
+get "/owners/:id/edit" do
+    @owner = Owner.find(params['id'].to_i)
+    erb(:"owners/edit")
+end
+
+post "/owners/:id/edit" do
+    owner = Owner.new(params)
+    Owner.update()
+    redirect to "/owners"
+end
+
+post "/owners/:id/delete" do
+    owner_delete = Owner.find(params['id'].to_i)
+    owner_delete.delete()
+    redirect to "/owners"
+end

@@ -7,7 +7,7 @@
 <ul>
     <% for adoption in @adoptions %>
     <li>
-    <p><%= adoption.owner.first_name %> <%= adoption.owner.last_name %> Adopted <%= adoption.animal.name %> into their care!
+    <p><%= adoption.owner.first_name %> <%= adoption.owner.last_name %> Adopted <%= adoption.animal.name %> into their care on <%= adoption.date%>.
     </p>
     </li>
     <% end %>

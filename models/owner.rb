@@ -46,8 +46,15 @@ class Owner
     SqlRunner.run(sql)
     end
 
+    def delete()
+    sql = "DELETE FROM owners
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+    end
+
   def animals()
-    sql = "SELECT * FROM animals INNER JOIN adoptions ON adoptions.animal_id = animal.id WHERE adoptions.owner_id = $1;"
+      sql = "SELECT animals.* FROM animals INNER JOIN adoptions ON animals.id = adoptions.animal_id  WHERE adoptions.owner_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |animal| Animal.new(animal)}

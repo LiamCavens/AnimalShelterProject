@@ -1,4 +1,16 @@
 <div class="show-table">
-    <h2> <%= @trainer.first_name %> <%= @trainer.last_name %> </h2>
-    <p> <%= @trainer.fav_species %> </p>
+    <h2> Name : <%= @trainer.first_name %> <%= @trainer.last_name %> </h2>
+    <p> Favourite Animal : <%= @trainer.fav_species %> </p>
 </div>
+
+<p>
+<form action="/trainers/<%= @trainer.id %>/edit" method="get">
+<input type="submit" value="Edit Trainer">
+</form>
+</p>
+
+<p>
+<form action="/trainers/<%= @trainer.id %>/delete" method="post">
+<input type="submit" value="Delete">
+</form>
+</p>

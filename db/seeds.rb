@@ -17,13 +17,20 @@ owner1 = Owner.new(
 
 owner1.save()
 
+owner2 = Owner.new(
+    "first_name" => "Aldo",
+    "last_name" => "Russell"
+)
+
+owner2.save()
+
 animal1 = Animal.new(
     "name" => "Stevie",
     "species" => "Lizard",
-    "breed" => "Argus monitor",
+    "breed" => "Argus Monitor",
     "age" => 2,
     "adoptable" => true,
-    "admission_date" => "03/02/2018"
+    "admission_date" => "2018-02-03"
 )
 
 animal1.save()
@@ -34,12 +41,21 @@ animal2 = Animal.new(
     "breed" => "Mini",
     "age" => 10,
     "adoptable" => false,
-    "admission_date" => "13/08/2017"
+    "admission_date" => "2017-08-13"
 )
 
 animal2.save()
 
+animal3 = Animal.new(
+    "name" => "Pegasus",
+    "species" => "Unicorn",
+    "breed" => "Magical",
+    "age" => 5,
+    "adoptable" => true,
+    "admission_date" => "2016-04-13"
+)
 
+animal3.save()
 
 trainer1 = Trainer.new(
     "first_name" => "Nicola",
@@ -49,10 +65,18 @@ trainer1 = Trainer.new(
 
 trainer1.save()
 
+trainer2 = Trainer.new(
+    "first_name" => "Micheal",
+    "last_name" => "Jackson",
+    "fav_species" => "Russian Dwarf Hamster"
+)
+
+trainer2.save()
+
 adoption1 = Adoption.new(
     "animal_id" => animal1.id(),
     "owner_id" => owner1.id(),
-    "date" => "14/03/2018"
+    "date" => "2018-03-14"
 )
 
 adoption1.save()

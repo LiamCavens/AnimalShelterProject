@@ -67,6 +67,13 @@ class Adoption
     SqlRunner.run(sql)
     end
 
+    def delete()
+    sql = "DELETE FROM adoptions
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+    end
+
     def self.destroy(id)
       sql = "DELETE FROM adoptions WHERE id = $1;"
       values = [id]
