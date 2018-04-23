@@ -47,7 +47,7 @@ class Owner
     end
 
   def animals()
-    sql = "SELECT * FROM animals INNER JOIN adoptions ON adoptions.animal_id = aminal.id WHERE adoptions.owner_id = $1;"
+    sql = "SELECT * FROM animals INNER JOIN adoptions ON adoptions.animal_id = animal.id WHERE adoptions.owner_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |animal| Animal.new(animal)}

@@ -1,3 +1,7 @@
+body {
+    background-color: #09814A;
+}
+
 h1 {
     font-family: 'Black Han Sans', sans-serif;
     text-align: center;
@@ -15,7 +19,7 @@ footer {
 }
 
 .navbar a {
-    display: block;
+    display: flex;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -26,6 +30,19 @@ footer {
 .navbar a:hover {
     background-color: #A7A2A9;
     color: #121619;
+}
+
+.navbar #website-abbreviate {
+    align-self: center;
+    justify-content: left;
+    color: #09814A;
+    font-family: 'Monoton', cursive;
+    padding: 0px;
+    margin: 0px;
+}
+
+table {
+    border-style: 10px groove;
 }
 
 .show-table {

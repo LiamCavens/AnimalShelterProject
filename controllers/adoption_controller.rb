@@ -10,7 +10,7 @@ get '/adoptions' do
 end
 
 get '/adoptions/new' do
-    @animals = Animal.all()
+    @animals = Adoption.adoptable_animal()
     @owners = Owner.all()
     erb(:'adoptions/new')
 end

@@ -6,14 +6,16 @@
      GAINSBORO - #E0E2DB
  -->
 
-<p>
-    <a href="/adoptions/new">New Adoption!</a>
-</p>
-
-<ul>
-    <% for adoption in @adoptions %>
-    <li>
-    <p><%= adoption.owner.first_name adoption.owner.last_name %> Adopted <%= adoption.animal.name %> into his care!
+<% @animals.each do |animal| %>
+    <p>Name :
+        <%= animal.name %>
     </p>
-    </li>
-</ul>
+    <p>Type :
+        <%= animal.species %> :
+            <%= animal.breed %>
+    </p>
+    <p>
+        <a href="/animals/<%= animal.id %>">Show Animal</a>
+    </p>
+    <hr />
+    <% end %>

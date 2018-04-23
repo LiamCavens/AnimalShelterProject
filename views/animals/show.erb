@@ -1,9 +1,19 @@
-
-
 <div class="show-table">
-    <h1> <%= @animal.name %> The <%= @animal.species %> </h1>
+    <h2> <%= @animal.name %> The <%= @animal.species %> </h2>
         <p> Breed : <%= @animal.breed %> </p>
         <p> Age : <%= @animal.age %> </p>
         <p> Adoptable : <%= @animal.adoptable %> </p>
         <p> Admission Date : <%= @animal.admission_date %> </p>
 </div>
+
+<p>
+<form action="/animals/<%= @animal.id %>/edit" method="get">
+<input type="submit" value="Edit Animal">
+</form>
+</p>
+
+<p>
+<form action="/animals/<%= @animal.id %>/delete" method="post">
+<input type="submit" value="Delete">
+</form>
+</p>

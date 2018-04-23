@@ -28,6 +28,19 @@ animal1 = Animal.new(
 
 animal1.save()
 
+animal2 = Animal.new(
+    "name" => "Malcolm",
+    "species" => "Horse",
+    "breed" => "Mini",
+    "age" => 10,
+    "adoptable" => false,
+    "admission_date" => "13/08/2017"
+)
+
+animal2.save()
+
+
+
 trainer1 = Trainer.new(
     "first_name" => "Nicola",
     "last_name" => "Sturgeon",

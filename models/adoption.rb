@@ -56,6 +56,12 @@ class Adoption
         return Animal.new(results.first)
     end
 
+    def self.adoptable_animal()
+        sql = "SELECT * FROM animals WHERE adoptable = true;"
+        results = SqlRunner.run(sql)
+        return results.map {|animal| Animal.new(animal)}
+    end
+
     def self.delete_all
     sql = "DELETE FROM adoptions"
     SqlRunner.run(sql)
