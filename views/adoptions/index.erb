@@ -1,14 +1,23 @@
-<h1> Adoptions </h1>
+<div class="title-box">
+    <div class="empty-green-box"> </div>
+        <h1 class="title"> Adoptions </h1>
+    <div class="empty-green-box"> </div>
+</div>
 
-<p class="create-btn">
-    <a class="btn" href="/adoptions/new">Add new Adoption</a>
-</p>
+<div class="adoption-content">
+<div>
+<button>
+    <a href="/adoptions/new">New Adoption</a>
+</button>
+</div>
 
-<ul>
-    <% for adoption in @adoptions %>
-    <li>
-    <p><%= adoption.owner.first_name %> <%= adoption.owner.last_name %> Adopted <%= adoption.animal.name %> into their care on <%= adoption.date%>.
-    </p>
-    </li>
-    <% end %>
-</ul>
+<% for adoption in @adoptions %>
+    <div id="adopt-line">
+        <p><%= adoption.owner.first_name %> <%= adoption.owner.last_name %> Adopted <%= adoption.animal.name %> into their care on <%= adoption.date%>. 
+            <form action="/adoptions/<%= adoption.id %>/delete" method="post">
+                <input class="btn-delete" type="submit" value="delete" />
+            </form>
+        </p>
+    </div>
+<% end %>
+</div>
