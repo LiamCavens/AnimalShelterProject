@@ -79,4 +79,10 @@ class Adoption
       values = [id]
       SqlRunner.run(sql, values)
     end
+
+    def set_to_false()
+        animal = animal()
+        animal.set_adoptable_to_false()
+        animal.update()
+    end
 end

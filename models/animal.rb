@@ -84,5 +84,17 @@ class Animal
     def self.delete_all
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)
-  end
+    end
+
+    def adoptable_yes_no()
+        if @adoptable == true
+        return true
+    else
+        return false
+        end
+    end
+
+    def set_adoptable_to_false()
+        @adoptable = false
+    end
 end

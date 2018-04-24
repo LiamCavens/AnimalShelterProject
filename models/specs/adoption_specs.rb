@@ -8,6 +8,7 @@ class AdoptionTest < MiniTest::Test
 
     def setup()
         @animal1 = Animal.new(
+            "id" => 1,
             "name" => "Stevie",
             "species" => "Lizard",
             "breed" => "Argus Monitor",
@@ -16,6 +17,7 @@ class AdoptionTest < MiniTest::Test
             "admission_date" => "2018-02-03"
             )
         @owner1 = Owner.new(
+            "id" => 1,
             "first_name" => "Liam",
             "last_name" => "Cavens"
             )
