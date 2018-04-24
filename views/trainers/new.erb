@@ -2,13 +2,13 @@
 
  <form action="/trainers" method="post">
     <label for="first_name">First Name:</label>
-    <input type="text" name="first_name" id="first_name">
+    <input type="text" required pattern="[a-zA-Z]*" name="first_name" id="first_name">
  
     <label for="last_name">Last Name:</label>
-    <input type="text" name="last_name" id="last_name">
+    <input type="text" required pattern="[a-zA-Z]*" name="last_name" id="last_name">
   
     <label for="fav_species">Favourite Animal:</label>
-    <input type="text" name="fav_species" id="fav_species">
+    <input type="text" required pattern="[a-zA-Z]*" name="fav_species" id="fav_species">
 
     <input type="submit" value="Add Trainer">
  

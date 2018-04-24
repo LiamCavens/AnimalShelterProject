@@ -1,17 +1,21 @@
-<h1> Edit Animal </h1>
+<div class="title-box">
+    <div class="empty-green-box"> </div>
+        <h1 class="title"> Edit Animal </h1>
+    <div class="empty-green-box"> </div>
+</div>
 
- <form action="/animals<%= @animal.id %>/edit" method="post">
+ <form action="/animals/<%= @animal.id %>/edit" method="post">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" value="<%= @animal.name %>">
  
     <label for="species">Species:</label>
-    <input type="text" name="species" id="species" value="<%= @animal.species %>">
+    <input type="text" required pattern="[a-zA-Z]*" name="species" id="species" value="<%= @animal.species %>">
  
     <label for="breed">Breed:</label>
-    <input type="text" name="breed" id="breed" value="<%= @animal.breed %>">
+    <input type="text" required pattern="[a-zA-Z]*" name="breed" id="breed" value="<%= @animal.breed %>">
  
     <label for="age">Age:</label>
-    <input type="number" name="age" value="<%= @animal.age %>" id="age">
+    <input type="number" min="0" name="age" value="<%= @animal.age %>" id="age">
  
     <label for="adoptable">Adoptable:</label>
     <input type="checkbox" name="adoptable" id="adoptable" value="<%= @animal.adoptable %>">

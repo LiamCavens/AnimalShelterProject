@@ -5,13 +5,13 @@
     <input type="text" name="name" id="name">
  
     <label for="species">Species:</label>
-    <input type="text" name="species" id="species">
+    <input type="text" required pattern="[a-zA-Z]*" name="species" id="species">
  
     <label for="breed">Breed:</label>
-    <input type="text" name="breed" id="breed">
+    <input type="text" required pattern="[a-zA-Z]*" name="breed" id="breed">
  
     <label for="age">Age:</label>
-    <input type="number" name="age" value="0" id="age">
+    <input type="number" min="0" name="age" value="0" id="age">
  
     <label for="adoptable">Adoptable:</label>
     <input type="checkbox" name="adoptable" id="adoptable">
