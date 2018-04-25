@@ -1,5 +1,9 @@
 <div class="show-table">
-    <h2> <%= @owner.first_name %> <%= @owner.last_name %> </h2>
+<div class="title-box">
+    <div class="empty-green-box"> </div>
+        <h1 class="title"> <%= @owner.first_name %> <%= @owner.last_name %>  </h1>
+    <div class="empty-green-box"> </div>
+</div>
     <p> Adopted Pets : <% @owner.animals().each do |animal| %></p>
     <p> <%= animal.name %> The <%= animal.species %> </p>
     <% end %>
