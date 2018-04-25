@@ -52,7 +52,7 @@ animal3 = Animal.new(
     "breed" => "Magical",
     "age" => 5,
     "adoptable" => true,
-    "admission_date" => "2016-04-13"
+    "admission_date" => "2016-04-13",
 )
 
 animal3.save()

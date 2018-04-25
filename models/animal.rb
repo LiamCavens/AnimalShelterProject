@@ -23,14 +23,15 @@ class Animal
       breed,
       age,
       adoptable,
-      admission_date
+      admission_date,
+      picture
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING id"
-    values = [@name, @species, @breed, @age, @adoptable, @admission_date]
+    values = [@name, @species, @breed, @age, @adoptable, @admission_date, @picture]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     end
@@ -46,10 +47,10 @@ class Animal
             adoptable,
             admission_date
         ) = (
-                $1, $2, $3, $4, $5, $6
+                $1, $2, $3, $4, $5, $6, $7
         ) 
-        WHERE id = $7;"
-        values = [@name, @species, @breed, @age, @adoptable, @admission_date, @id]
+        WHERE id = $8;"
+        values = [@name, @species, @breed, @age, @adoptable, @admission_date, @picture, @id]
         SqlRunner.run(sql, values)
     end
 
