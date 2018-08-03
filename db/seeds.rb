@@ -24,6 +24,15 @@ owner2 = Owner.new(
 
 owner2.save()
 
+owner3 = Owner.new(
+    "first_name" => "Dr.",
+    "last_name" => "Dolittle"
+)
+
+owner3.save()
+
+
+
 animal1 = Animal.new(
     "name" => "Stevie",
     "species" => "Lizard",

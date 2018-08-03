@@ -23,15 +23,14 @@ class Animal
       breed,
       age,
       adoptable,
-      admission_date,
-      picture
+      admission_date
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @species, @breed, @age, @adoptable, @admission_date, @picture]
+    values = [@name, @species, @breed, @age, @adoptable, @admission_date]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     end
@@ -89,9 +88,9 @@ class Animal
 
     def adoptable_yes_no()
         if @adoptable == true
-        return true
+        return "Yes"
     else
-        return false
+        return "No"
         end
     end
 
